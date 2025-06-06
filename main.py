@@ -7,7 +7,9 @@ import time
 from anki_vector.util import degrees
 import matplotlib.pyplot as plt
 import math
-# ### CONSTANTS
+
+
+## CONSTANTS
 
 CAMERA_WIDTH = 640 # pixels
 CAMERA_HEIGHT = 384  # pixels
@@ -20,9 +22,9 @@ NUM_STEPS = 5000
 # Try to do 8 degrees per step 
 
 # PID controller constants for tuning 
-K_P = 0.1
-K_I = 0
-K_D = 0
+K_P = 0.15
+K_I = 0.002
+K_D = 0.025
 BIAS = 0
 
 
@@ -34,7 +36,7 @@ BIAS = 0
 model = YOLO("current.pt")
 
 
-def move_deg_to_speed(move_deg, scale=5):
+def move_deg_to_speed(move_deg, scale=7):
     # Scale move_deg (degrees) to wheel speed [-100, 100]
     return max(min(move_deg * scale, 100), -100)
 
@@ -52,7 +54,7 @@ def main():
 
 
 
-    with anki_vector.Robot("006068a2") as robot:
+    with anki_vector.Robot("00806b78") as robot:
 
         robot.behavior.set_head_angle(degrees(7.0))
         robot.behavior.set_lift_height(0.0)
