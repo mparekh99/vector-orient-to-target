@@ -4,6 +4,10 @@ This script enables an Anki Vector robot to detect a another Vector using YOLO o
 
 It runs in real-time (~10 Hz), performing detection and motion control with a live video feed from Vector's onboard camera. 
 
+## Expected Behavior
+![VectorAngularTurn - Made with Clipchamp](https://github.com/user-attachments/assets/381a2d7b-b201-4770-abd7-972aa9c9e8bd)
+![VectorAngularTurnIRL - Made with Clipchamp](https://github.com/user-attachments/assets/cefda71d-95fc-43fc-9eb2-b27a30bb0aed)
+
 # How It Works
 ## 1. Object Detection (YOLO):
 Every 100 ms (~10 Hz), the robot captures a frame from its camera. YOLO is run on the image to detect objects — specifically a vector class.
@@ -33,6 +37,3 @@ A PID (Proportional-Integral-Derivative) controller smooths the turn toward the 
 
 This allows Vector to turn smoothly and accurately toward the detected object.
 
-## Expected Behavior
-![VectorAngularTurn - Made with Clipchamp](https://github.com/user-attachments/assets/381a2d7b-b201-4770-abd7-972aa9c9e8bd)
-![VectorAngularTurnIRL - Made with Clipchamp](https://github.com/user-attachments/assets/cefda71d-95fc-43fc-9eb2-b27a30bb0aed)
